@@ -191,6 +191,8 @@ app.post("/api/iot/suhu", async (req, res) => {
 /* ======================================================
    SERVER
 ====================================================== */
-app.listen(port, () => {
-  console.log(`🚀 Server running at http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
