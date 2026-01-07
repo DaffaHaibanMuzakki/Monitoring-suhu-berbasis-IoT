@@ -176,6 +176,12 @@ app.get("/tanggal/:date/ruangan/:nama", async (req, res) => {
   res.render("grafik", { data: hasil });
 });
 
+
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+
 /* ===== API ESP32 ===== */
 app.post("/api/iot/suhu", async (req, res) => {
   try {
