@@ -1,0 +1,164 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
+/*################## NAVBAR #################*/
+
+.mbg-navbar {
+  background-color: #0D47A1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Warna icon toggler */
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.6);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Hover effect */
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+.judul{
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Background image */
+.bg-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("dapur_mbg.jpg"); /* ganti sesuai nama gambar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Fade / overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 48, 107, 0.65); /* biru transparan */
+}
+
+/* Pastikan konten di atas overlay */
+.container {
+  z-index: 1;
+}
+
+
+
+
+
+
+/*################## TABLE #################*/
+
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.76);
+}
+
+/* AREA PUTIH DENGAN TINGGI TETAP */
+/* Area scroll */
+.table-scroll {
+  max-height: 420px;
+  min-height: 420px;
+  overflow-y: auto;
+  background: #ffffff;
+  
+}
+
+/* Sticky header */
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: #0D47A1;   /* WAJIB ADA */
+  color: #ffffff;
+  z-index: 3;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.74);
+}
+
+/* Hilangkan border grid */
+.table th,
+.table td {
+  border: none;
+}
+
+/* Garis pemisah halus */
+.table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.thead_{
+    background-color: #0D47A1 !important;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.637) !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25) !important;
+
+}
+
+
+
+
+/* Card dashboard putih */
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Info list */
+.info-list .list-group-item {
+  border: none;
+  padding: 12px 0;
+  font-size: 0.95rem;
+}
+
+/* Judul halaman */
+.judul {
+  text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+/* Navbar */
+.mbg-navbar {
+  background-color: #0D47A1;
+}
+
+.mbg-navbar .navbar-brand {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+}
+
+
+.suhu-table th {
+  background-color: #0D47A1;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.suhu-table td {
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.suhu-table {
+  border-radius: 10px;
+  overflow: hidden;
+}
