@@ -4,5 +4,8 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mongoose": "^8.21.0"
-  }
+  },
+  "scripts": {
+      "start": "node app.js"
+    }
 }
