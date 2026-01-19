@@ -55,6 +55,7 @@
           <th>No.</th>
           <th>Tanggal</th>
           <th>Stabilitas suhu</th>
+          <th>Stabilitas kelembapan</th>
           <th>Status Data</th>
           <th>Detail</th>
         </tr>
@@ -66,6 +67,7 @@
             <td><%= data.indexOf(element) + 1 %></td>
             <td><%= element.waktu %></td>
             <td><%= element.stabilitas_suhu %></td>
+            <td><%= element.stabilitas_kelembapan %></td>
             <td><%= element.stabilitas_data %></td>
             <td>
               <a class="btn btn-primary btn-sm" href="/tanggal/<%= element.waktu %>">

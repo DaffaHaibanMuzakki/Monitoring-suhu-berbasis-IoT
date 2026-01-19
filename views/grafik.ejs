@@ -59,7 +59,7 @@
         <!-- KIRI: GRAFIK -->
         <div class="col-md-8">
           <h5 class="mb-3 text-primary fw-semibold">
-            <i class="bi bi-graph-up"></i> Grafik Suhu Terjadwal 30 Menit
+            <i class="bi bi-thermometer-half"></i> Grafik Suhu Terjadwal 30 Menit
           </h5>
           <canvas id="suhuChart" class="mt-5" height="120"></canvas>
           <!-- TABEL DETAIL SUHU -->
@@ -74,7 +74,7 @@
       </tr>
       <tr>
         <th>Suhu (°C)</th>
-        <% data.data.forEach(suhu => { %>
+        <% data.data_suhu.forEach(suhu => { %>
           <td><%= suhu %> °C</td>
         <% }); %>
       </tr>
@@ -98,29 +98,88 @@
               <strong>Tanggal:</strong><br> <%= data.tanggal %>
             </li>
             <li class="list-group-item">
-              <strong>Suhu Minimum:</strong><br> <%= data.min %> °C
+              <strong>Suhu Minimum:</strong><br> <%= data.min_suhu %> °C
             </li>
             <li class="list-group-item">
-              <strong>Suhu Maksimum:</strong><br> <%= data.max %> °C
+              <strong>Suhu Maksimum:</strong><br> <%= data.max_suhu %> °C
             </li>
             <li class="list-group-item">
-              <strong>Rata-rata:</strong><br> <%= data.avg %> °C
+              <strong>Rata-rata:</strong><br> <%= data.avg_suhu %> °C
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- KIRI: GRAFIK -->
+        <div class="col-md-8">
+          <h5 class="mb-3 text-primary fw-semibold">
+            <i class="bi bi-moisture"></i> Grafik Kelembapan Terjadwal 30 Menit 
+          </h5>
+          <canvas id="kelembapanChart" class="mt-5" height="120"></canvas>
+          <!-- TABEL DETAIL KELEMBAPAN -->
+<div class="table-responsive mt-4">
+  <table class="table table-bordered table-sm text-center align-middle suhu-table">
+    <tbody>
+      <tr class="table-primary">
+        <th>Jam</th>
+        <% data.labels.forEach(label => { %>
+          <td><%= label %></td>
+        <% }); %>
+      </tr>
+      <tr>
+        <th>Kelembapan (%)</th>
+        <% data.data_kelembapan.forEach(kelembapan => { %>
+          <td><%= kelembapan %> %</td>
+        <% }); %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+        </div>
+
+        <!-- KANAN: INFO -->
+        <div class="col-md-4">
+          <h5 class="mb-3 text-primary fw-semibold">
+            <i class="bi bi-info-circle"></i> Informasi Ruangan
+          </h5>
+
+          <ul class="list-group list-group-flush info-list">
+            <li class="list-group-item">
+              <strong>Ruangan:</strong><br> <%= data.ruangan %>
+            </li>
+            <li class="list-group-item">
+              <strong>Tanggal:</strong><br> <%= data.tanggal %>
+            </li>
+            <li class="list-group-item">
+              <strong>Suhu Minimum:</strong><br> <%= data.min_kelembapan %> %
+            </li>
+            <li class="list-group-item">
+              <strong>Suhu Maksimum:</strong><br> <%= data.max_kelembapan %> %
+            </li>
+            <li class="list-group-item">
+              <strong>Rata-rata:</strong><br> <%= data.avg_kelembapan %> %
             </li>
           </ul>
         </div>
       </div>
 
     </div>
+    
   </div>
-</div>
 
   
-
+</div>
 
 
       
       </div>
+
+      
     </div>
+
+    
 
     <!-- Bootstrap JS -->
     <script 
@@ -131,7 +190,9 @@
 
 
     <script>
-  window.GRAFIK = <%- JSON.stringify(data) %>; </script>
+  window.GRAFIK = <%- JSON.stringify(data) %>; 
+  
+  </script>
 
 
     <script>
@@ -143,7 +204,7 @@ new Chart(ctx, {
     labels: window.GRAFIK.labels,
     datasets: [{
       label: 'Suhu (°C)',
-      data: window.GRAFIK.data,
+      data: window.GRAFIK.data_suhu,
       borderColor: '#0D47A1',
       backgroundColor: 'rgba(13,71,161,0.15)',
       tension: 0.4,
@@ -170,6 +231,35 @@ new Chart(ctx, {
   }
 });
 </script>
+
+<script>
+const ctxKelembapan = document.getElementById('kelembapanChart');
+
+new Chart(ctxKelembapan, {
+  type: 'line',
+  data: {
+    labels: window.GRAFIK.labels,
+    datasets: [{
+      label: 'Kelembapan (%)',
+      data: window.GRAFIK.data_kelembapan,
+      borderColor: '#0D47A1',
+      backgroundColor: 'rgba(46,125,50,0.15)',
+      tension: 0.4,
+      fill: true
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        ticks: {
+          callback: value => value + ' %'
+        }
+      }
+    }
+  }
+});
+</script>
+
 
   </body>
 </html>

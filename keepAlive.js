@@ -1,4 +1,5 @@
-import axios from "axios";
+const { default: axios } = require("axios");
+
 
 const TARGET_URL =
   "https://monitoring-suhu-berbasis-iot-1.onrender.com/health";

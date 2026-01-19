@@ -62,7 +62,9 @@
           <th>Ruangan</th>
           <th>Stabilitas Data</th>
           <th>Stabilitas Suhu</th>
-          <th>Rata-rata</th>
+          <th>Stabilitas Kelembapan</th>
+          <th>Rata-Rata Suhu </th>
+          <th>Rata-Rata Kelembapan </th>
           <th>Stats</th>
         </tr>
       </thead>
@@ -74,7 +76,9 @@
             <td><%= element.ruangan %></td>
             <td><%= element.stabilitas_data %></td>
             <td><%= element.stabilitas_suhu %></td>
-            <td><%= element.rata_rata %> °C</td>
+            <td><%= element.stabilitas_kelembapan %></td>
+            <td><%= element.rata_rata_suhu %> °C</td>
+            <td><%= element.rata_rata_kelembapan %> %</td>
             <td>
               <a class="btn btn-primary btn-sm" href="/tanggal/<%= element.tanggal %>/ruangan/<%= element.ruangan %>">
                 <i class="bi bi-graph-down me-1"></i> Detail
